@@ -6,3 +6,12 @@ header {
     color: white;
     padding-bottom: 50px;
 }
+
+#local-weather {
+    background-color: bisque;
+}
+
+.fiveday {
+    background-color: cornflowerblue;
+    padding: 10 px;
+}

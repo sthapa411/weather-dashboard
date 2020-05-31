@@ -15,8 +15,6 @@ function getLocation() {
    console.log(lat);
    console.log(lon);
 
-
-   
    var apiKey = "6b8de7a084282aaf686c43378158492e"
    var uvWeatherURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey;
    var currentWeatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=6b8de7a084282aaf686c43378158492e";
@@ -94,6 +92,7 @@ function getLocation() {
    }
 
    //  UV value 
+   
    function localUv(){
     $.ajax({
       url: uvWeatherURL,
@@ -110,6 +109,9 @@ function getLocation() {
    currentWeather();
   }
   getLocation();
+
+  
+  
 
   // Get 5 day forecast via city search
 var cities = [];
@@ -137,7 +139,7 @@ function citySearch() {
     $("#select-area").text(selectCity);
     $("#select-icon").attr("src", selectIcon);
     $("#select-temp").text(selectTemp);
-    $("#select-humidity").text(selectHumidity);
+    $("#select-humid").text(selectHumidity);
     $("#select-wind").text(selectWind);
 
    // Get values for search city 5 day forecast sections
@@ -205,47 +207,32 @@ if (retrieveHistory) {
 function renderButtons() {
 
   // Deleting the cities prior to adding new ones
-  // (this is necessary otherwise you will have repeat buttons)
   $("#recent-search").empty();
 
   // Looping through the array of cities
   for (var i = 0; i < cities.length; i++) {
-
-    // Then dynamicaly generating buttons for each movie in the array
-    // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
     var a = $("<button>");
-    // Adding a class of movie-btn to our button
     a.addClass("city-name");
-    // Adding a data-attribute
     a.attr("data-name", cities[i]);
-    // Providing the initial button text
     a.text(cities[i]);
 
     var history = localStorage.getItem("Search Result") || 0;
     localStorage.setItem("Search Result", cities);
 
-    // Adding the button to the buttons-view div
-    $("#recent-search").append(a);
+    // Adding the button to the buttons-view 
+    $("#recent-search").prepend(a);
   }
 }
 
-// This function handles events where a button is clicked
 $("#search-button").on("click", function(event) {
   event.preventDefault();
-  // This line grabs the input from the textbox
   var city = $("#search-field").val().trim();
   var savedCity = $("#search-field").val().trim();
-
-
-  // Adding movie from the textbox to our array
   cities.push(city);
-
-  // Calling renderButtons which handles the processing of our cities array
   renderButtons();
 });
 
 // Adding a click event listener to all elements with a class of "city-name"
 $(document).on("click", ".city-name", citySearch);
 
-// Calling the renderButtons function to display the initial buttons
 renderButtons();

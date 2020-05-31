@@ -11,96 +11,87 @@
 </head>
 
 <body>
-    <header>
-      <h1>Weather Dashboard</h1>
-    </header>
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4 left-side">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 left-side">
           <!-- Search Bar -->
-          <div id="search">
-              <h2>Search for a City</h2>
-              <input id="search-field" type="search" placeholder="Enter City"><br>
-              <input id="search-button" type="submit">
-              <button id="clear-history" type="button">Clear History</button>
-          </div>
+      <div id="search">
+        <h2>Search for a City</h2>
+        <input id="search-field" type="search" placeholder="Enter City"><br>
+        <input id="search-button" type=button onClick="location.href='currentcity.html'" value='Submit'>
+        <button id="clear-history" type="button">Clear History</button>
+      </div>
           
           <!-- Recent Search History -->
-          <div id="recent-search">
-              <h2>Recent Searches</h2>
-          </div>
-        </div>
-        
+      <div id="recent-search">
+        <h2>Recent Searches</h2>
+      </div>
+
+      </div>
+      
         <div class="col-md-8 right-side">
-            <!-- Local Weather -->
-            <div id="local-weather">
-              <h2>Local Weather</h2>
-              <h4><span id="local-area"></span> - <span id="local-date"></span> - <img id="local-icon" alt="Local Weather Icon" scr=""></h4><br>
-                <p>Temperature: <span id="local-temp"></span> &deg;F</p>
-                <p>Humidity: <span id="local-humidity"></span>%</p>
-                <p>Wind Speed: <span id="local-windspeed"></span>Mph</p>
-                <p>UV Index: <span id="local-uv"></span></p>
-                <div id="search-selected">
-                    <h3><span id="select-area"></span> - <span id="select-date"></span> - <img id="select-icon" alt="Select City Weather Icon" scr=""></h3>
-                    <p>Temp: <span id="select-temp"></span> &deg; F</p> 
-                    <p>Humidity: <span id="select-humid"></span>%</p>
-                      
-                    <h3>5 Day Forecast</h3>
-                    <!-- City Search - 5 Day Forecast -->
-                    <div class="container-fluid">
-                      <div class="row">
+          <div id="search-selected">
+            <h3><span id="select-area"></span> - <span id="select-date"></span> - <img id="select-icon" alt="Select City Weather Icon" scr=""></h3>
+            <p>Temp: <span id="select-temp"></span> &deg; F</p> 
+            <p>Humidity: <span id="select-humid"></span>%</p>
+          </div>
+          <!-- Local Weather -->
+          <h3>5 Day Forecast</h3>
+            <!-- City Search - 5 Day Forecast -->
+          <div class="container-fluid">
+            <div class="row">
                           <!-- City Search Day 1 -->
-                          <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                            <p>Day 1</p>
-                              <img id="city-icon-one" alt="Day 1 Forecast Icon" src="">
-                              <p>Temp: <span id="city-temp-one"></span> &deg; F</p>
-                              <p>Humidity: <span id="city-humidity-one"></span>%</p>
-                          </div>
+              <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                <p>Day 1</p>
+                <img id="city-icon-one" alt="Day 1 Forecast Icon" src="">
+                <p>Temp: <span id="city-temp-one"></span> &deg; F</p>
+                <p>Humidity: <span id="city-humidity-one"></span>%</p>
+              </div>
       
                           <!-- City Search Day 2 -->
-                          <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                            <p>Day 2</p>
-                              <img id="city-icon-two" alt="Day 2 Forecast Icon" src="">
-                              <p>Temp: <span id="city-temp-two"></span> &deg; F</p>
-                              <p>Humidity: <span id="city-humidity-two"></span>%</p>
-                          </div>
+              <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                <p>Day 2</p>
+                <img id="city-icon-two" alt="Day 2 Forecast Icon" src="">
+                <p>Temp: <span id="city-temp-two"></span> &deg; F</p>
+                <p>Humidity: <span id="city-humidity-two"></span>%</p>
+              </div>
       
                           <!-- City Search Day 3 -->
-                          <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                            <p>Day 3</p>
-                              <img id="city-icon-three" alt="Day 3 Forecast Icon" src="">
-                              <p>Temp: <span id="city-temp-three"></span> &deg; F</p>
-                              <p>Humidity: <span id="city-humidity-three"></span>%</p>
-                          </div>
+              <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                <p>Day 3</p>
+                <img id="city-icon-three" alt="Day 3 Forecast Icon" src="">
+                <p>Temp: <span id="city-temp-three"></span> &deg; F</p>
+                <p>Humidity: <span id="city-humidity-three"></span>%</p>
+              </div>
       
                           <!-- City Search Day 4 -->
-                          <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                            <p>Day 4</p>
-                            <img id="city-icon-four" alt="Day 4 Forecast Icon" src="">
-                            <p>Temp: <span id="city-temp-four"></span> &deg; F</p>
-                            <p>Humidity: <span id="city-humidity-four"></span>%</p>
-                          </div>
+              <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                <p>Day 4</p>
+                <img id="city-icon-four" alt="Day 4 Forecast Icon" src="">
+                <p>Temp: <span id="city-temp-four"></span> &deg; F</p>
+                <p>Humidity: <span id="city-humidity-four"></span>%</p>
+              </div>
       
                           <!-- City Search Day 5 -->
-                          <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                            <p>Day 5</p>
-                            <img id="city-icon-five" alt="Day 5 Forecast Icon" src="">
-                            <p>Temp: <span id="city-temp-five"></span> &deg; F</p>
-                            <p>Humidity: <span id="city-humidity-five"></span>%</p>
-                          </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                <p>Day 5</p>
+                <img id="city-icon-five" alt="Day 5 Forecast Icon" src="">
+                <p>Temp: <span id="city-temp-five"></span> &deg; F</p>
+                <p>Humidity: <span id="city-humidity-five"></span>%</p>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+  </div>
       
-          <!-- Footer Section -->
-    <footer>
-      
-    </footer>
+          
 </body>
       
-    <script src="script.js"></script>
+  <script src="script.js"></script>
       
 </html>     

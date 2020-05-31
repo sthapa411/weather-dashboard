@@ -5,110 +5,96 @@
   <meta charset="utf-8">
   <title>Your Daily Weather Guide</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-      <h1>Weather Dashboard</h1>
-    </header>
+ <header>
+    <h1>Weather Dashboard</h1>
+  </header>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4 left-side">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 left-side">
           <!-- Search Bar -->
-          <div id="search">
-              <h2>Search for a City</h2>
-              <input id="search-field" type="search" placeholder="Enter City"><br>
-              <input id="search-button" type="submit">
-              <button id="clear-history" type="button">Clear History</button>
-          </div>
+        <div id="search">
+          <h2>Search for a City</h2>
+          <input id="search-field" type="search" placeholder="Enter City"><br>
+          <input id="search-button" type=button onClick="location.href='currentcity.html'" value='Submit'>
+          <button id="clear-history" type="button">Clear History</button>
+        </div>
           
           <!-- Recent Search History -->
-          <div id="recent-search">
-              <h2>Recent Searches</h2>
-          </div>
+        <div id="recent-search">
+          <h2>Recent Searches</h2>
         </div>
-        
+
+        </div>
          <div class="col-md-8 right-side">
             <!-- Local Weather -->
-            <div id="local-weather">
-              <h2>Local Weather</h2>
-              <h4><span id="local-area"></span> - <span id="local-date"></span> - <img id="local-icon" alt="Local Weather Icon" scr=""></h4><br>
-                <p>Temperature: <span id="local-temp"></span> &deg;F</p>
-                <p>Humidity: <span id="local-humidity"></span>%</p>
-                <p>Wind Speed: <span id="local-windspeed"></span>Mph</p>
-                <p>UV Index: <span id="local-uv"></span></p>
+          <div id="local-weather">
+            <h2>Local Weather</h2>
+            <h3><span id="local-area"></span> - <span id="local-date"></span> - <img id="local-icon" alt="Local Weather Icon" scr=""></h3><br>
+              <p>Temperature: <span id="local-temp"></span> &deg;F</p>
+              <p>Humidity: <span id="local-humidity"></span>%</p>
+              <p>Wind Speed: <span id="local-windspeed"></span>Mph</p>
+              <p>UV Index: <span id="local-uv"></span></p>
               
-                <h2>5 Day Forecast</h2>
+            <h2>5 Day Forecast</h2>
               <!-- Local - 5 Day Forecast -->
-                <div class="container-fluid">
-                  <div class="row">
+             <div class="container-fluid">
+                <div class="row">
                       <!-- Local Day 1 -->
-                      <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                          <p><span id="local-date-one"></span></p>
-                          <img id="local-icon-one" alt="Day 1 Forecast Icon" src="">
-                          <p>Temp: <span id="local-temp-one"></span> &deg; F</p>
-                          <p>Humidity: <span id="local-humidity-one"></span>%</p>
-                      </div>
+                  <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                    <p><span id="local-date-one"></span></p>
+                    <img id="local-icon-one" alt="Day 1 Forecast Icon" src="">
+                    <p>Temp: <span id="local-temp-one"></span> &deg; F</p>
+                    <p>Humidity: <span id="local-humidity-one"></span>%</p>
+                  </div>
 
                       <!-- Local Day 2 -->
-                      <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                          <p><span id="local-date-two"></span></p>
-                          <img id="local-icon-two" alt="Day 2 Forecast Icon" src="">
-                          <p>Temp: <span id="local-temp-two"></span> &deg; F</p>
-                          <p>Humidity: <span id="local-humidity-two"></span>%</p>
-                      </div>
+                  <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                    <p><span id="local-date-two"></span></p>
+                    <img id="local-icon-two" alt="Day 2 Forecast Icon" src="">
+                    <p>Temp: <span id="local-temp-two"></span> &deg; F</p>
+                    <p>Humidity: <span id="local-humidity-two"></span>%</p>
+                  </div>
 
                       <!-- Local Day 3 -->
-                      <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                          <p><span id="local-date-three"></span></p>
-                          <img id="local-icon-three" alt="Day 3 Forecast Icon" src="">
-                          <p>Temp: <span id="local-temp-three"></span> &deg; F</p>
-                          <p>Humidity: <span id="local-humidity-three"></span>%</p>
-                      </div>
+                  <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                    <p><span id="local-date-three"></span></p>
+                    <img id="local-icon-three" alt="Day 3 Forecast Icon" src="">
+                    <p>Temp: <span id="local-temp-three"></span> &deg; F</p>
+                    <p>Humidity: <span id="local-humidity-three"></span>%</p>
+                  </div>
 
                       <!-- Local Day 4 -->
-                      <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                        <p><span id="local-date-four"></span></p>
-                        <img id="local-icon-four" alt="Day 4 Forecast Icon" src="">
-                        <p>Temp: <span id="local-temp-four"></span> &deg; F</p>
-                        <p>Humidity: <span id="local-humidity-four"></span>%</p>
-                    </div>
+                  <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                    <p><span id="local-date-four"></span></p>
+                    <img id="local-icon-four" alt="Day 4 Forecast Icon" src="">
+                    <p>Temp: <span id="local-temp-four"></span> &deg; F</p>
+                    <p>Humidity: <span id="local-humidity-four"></span>%</p>
+                  </div>
 
                       <!-- Local Day 5 -->
-                      <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
-                        <p><span id="local-date-five"></span></p>
-                        <img id="local-icon-five" alt="Day 5 Forecast Icon" src="">
-                        <p>Temp: <span id="local-temp-five"></span> &deg; F</p>
-                        <p>Humidity: <span id="local-humidity-five"></span>%</p>
-                    </div>
+                  <div class="col-sm-6 col-md-6 col-lg-2 fiveday">
+                    <p><span id="local-date-five"></span></p>
+                    <img id="local-icon-five" alt="Day 5 Forecast Icon" src="">
+                    <p>Temp: <span id="local-temp-five"></span> &deg; F</p>
+                    <p>Humidity: <span id="local-humidity-five"></span>%</p>
                   </div>
-                </div>
-            </div>
-            <!-- End Local Weather -->
-
-            <div id="search-selected">
-              <h3><span id="select-area"></span> - <span id="select-date"></span> - <img id="select-icon" alt="Select City Weather Icon" scr=""></h3>
-              <p>Temp: <span id="select-temp"></span> &deg; F</p> 
-              <p>Humidity: <span id="select-humid"></span>%</p>
-                
-              
-              /div>
-
                 </div>
               </div>
             </div>
+            <!-- End Local Weather -->
+         </div>   
+            
         </div>
       </div>
     </div>
-
-    <!-- Footer Section -->
-    <footer>
-
-    </footer>
 </body>
 
 <script src="script.js"></script>
