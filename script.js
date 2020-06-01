@@ -220,7 +220,7 @@ function renderButtons() {
     localStorage.setItem("Search Result", cities);
 
     // Adding the button to the buttons-view 
-    $("#recent-search").prepend(a);
+    $("#recent-search").append(a);
   }
 }
 
